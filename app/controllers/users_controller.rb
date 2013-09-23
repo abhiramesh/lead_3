@@ -125,7 +125,6 @@ class UsersController < ApplicationController
               end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
-                "Test_Lead" => '1',
                 "TYPE" => '85',
                 "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
@@ -170,7 +169,6 @@ class UsersController < ApplicationController
               end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
-                "Test_Lead" => '1',
                 "TYPE" => '85',
                 "SRC" => "PujiiComp2",
                 "Landing_Page" => "amp1",
