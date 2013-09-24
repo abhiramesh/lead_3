@@ -126,7 +126,7 @@ class UsersController < ApplicationController
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
-                "SRC" => "PujiiComp2",
+                "SRC" => "PujiiComp3",
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
                 "First_Name" => @user.name.split(' ')[0],
@@ -170,7 +170,7 @@ class UsersController < ApplicationController
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
-                "SRC" => "PujiiComp2",
+                "SRC" => "PujiiComp3",
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
                 "First_Name" => @user.name.split(' ')[0],
