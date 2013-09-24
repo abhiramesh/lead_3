@@ -6,6 +6,13 @@
 	</div>
 	<div class="message" id="desc_error"></div>
 
+	<%= f.label :previous, 'Have you previously applied for disability benefits?' %>
+	<%= f.select :previous, options_for_select(previous_options) %>
+	<span class="checkimg" id="previouscheck"><img src="/assets/check.png"></span>
+	<div class="desc">
+	</div>
+	<div class="message" id="previous_error"></div>
+
 	<%= f.submit "Next >>", :class => "home-submit", :id => "submit3"%>
 <% end %>
 </div>

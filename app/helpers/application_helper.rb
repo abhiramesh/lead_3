@@ -45,6 +45,15 @@ module ApplicationHelper
 		]
 	end
 
+	def previous_options
+		[
+			["No", "No"],
+			["Yes, claim pending", "Yes, claim pending"],
+			["Yes, receiving benefits", "Yes, receiving benefits"],
+			["Yes, claim denied", "Yes, claim denied"],
+		]
+	end
+
 	def debt_options
 		[
 			["Yes, I need debt help", "Yes, I need debt help"],
