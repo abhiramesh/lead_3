@@ -14,6 +14,7 @@ gem 'mechanize'
 gem 'json'
 gem 'geokit'
 gem 'area'
+gem 'newrelic_rpm'
 
 # Gems used only for assets and not required
 # in production environments by default.
