@@ -1,5 +1,5 @@
 <%= form_for @user, :html => {:id => "form2"} do |f| %>
-	<%= f.label :employment, 'Do you expect to be unemployed for at least 12 months?' %>
+	<%= f.label :employment, 'Do you expect to be unemployed or making less than $1500 per month?' %>
 	<%= f.select :employment, options_for_select(employment_options), :include_blank => true %>
 	<span class="checkimg" id="employmentcheck"><img src="/assets/check.png"></span>
 	<div class="desc">

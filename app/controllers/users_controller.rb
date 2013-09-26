@@ -108,6 +108,14 @@ class UsersController < ApplicationController
       @user.desc = params["desc"]
       @user.save!
     end
+    if params["user"]["phone"]
+      @user.phone = params["user"]["phone"]
+      @user.save!
+    end
+    if params["user"]["email"]
+      @user.email = params["user"]["email"]
+      @user.save!
+    end
     if params["first_name"] && params["last_name"]
       @user.name = params["first_name"] + " " + params["last_name"]
       @user.save!
@@ -202,6 +210,8 @@ class UsersController < ApplicationController
             end
           redirect_to '/logout'
         end
+      else
+        redirect_to 'logout'
       end
   end
 

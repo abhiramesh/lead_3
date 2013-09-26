@@ -15,3 +15,19 @@
 [09/25/13 20:39:20 -0400 hnt20074.wireless-pennnet.upenn.edu (2265)] INFO : Installing Rails3 Error instrumentation
 [09/25/13 20:39:20 -0400 hnt20074.wireless-pennnet.upenn.edu (2265)] INFO : Finished instrumentation
 [09/25/13 20:39:20 -0400 hnt20074.wireless-pennnet.upenn.edu (2265)] INFO : Doing deferred dependency-detection before Rack startup
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Starting the New Relic agent in "development" environment.
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Reading configuration from config/newrelic.yml
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Enabling the Request Sampler.
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Environment: development
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Dispatcher: webrick
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Application: Lead_3
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] WARN : Agent configured not to send data in this environment.
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing ActiveRecord instrumentation
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing Net instrumentation
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing deferred Rack instrumentation
+[09/26/13 09:26:25 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing Rails 3 Controller instrumentation
+[09/26/13 09:26:26 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[09/26/13 09:26:26 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Installing Rails3 Error instrumentation
+[09/26/13 09:26:26 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Finished instrumentation
+[09/26/13 09:26:27 -0400 vagvlan554.466.wlan.wireless-pennnet.upenn.edu (1131)] INFO : Doing deferred dependency-detection before Rack startup
