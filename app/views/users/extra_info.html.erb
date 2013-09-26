@@ -15,14 +15,14 @@
 		<%= form_for @user, :html => {:id => "extraform"} do |f| %>
 			<span id="debt">Do you need help paying off debts?</span>
 			<br>
-			<%= f.select :debt, options_for_select(debt_options) %>
+			<%= f.select :debt, options_for_select(debt_options), :include_blank => true %>
 			<span class="checkimg" id="debtcheck"><img src="/assets/check.png"></span>
-			<br>
+			<div class="message" id="debt_error"></div>
 			<span id="loan">Do you need help paying off student loans?</span>
 			<br>
-			<%= f.select :loan, options_for_select(loan_options) %>
+			<%= f.select :loan, options_for_select(loan_options), :include_blank => true %>
 			<span class="checkimg" id="loancheck"><img src="/assets/check.png"></span>
-			<br>
+			<div class="message" id="loan_error"></div>
 			<%= f.submit "Do I Qualify?", :class => "home-submit" %>
 		<% end %>
 	</div>
@@ -57,9 +57,36 @@
 
 <script type="text/javascript">
 	$('select#user_loan').bind('click change',function() {
-		$('#loancheck img').show();
+		if ($('#user_loan').val() != "") {
+			$('#loancheck img').show();
+			$('#loan_error').empty();
+		}
+		if ($('#user_loan').val() == "") {
+			$('#loancheck img').hide();
+			$('#loan_error').empty().append("Please select an option");
+		}
 	});
+
 	$('select#user_debt').bind('click change',function() {
-		$('#debtcheck img').show();
+		if ($('#user_debt').val() != "") {
+			$('#debtcheck img').show();
+			$('#debt_error').empty();
+		}
+		if ($('#user_debt').val() == "") {
+			$('#debtcheck img').hide();
+			$('#debt_error').empty().append("Please select an option");
+		}
+	});
+	$('.home-submit').click(function(event){
+		if ($('#user_debt').val() == "") {
+			event.preventDefault();
+			$('#debtcheck img').hide();
+			$('#debt_error').empty().append("Please select an option");
+		}
+		if ($('#user_loan').val() == "") {
+			event.preventDefault();
+			$('#loancheck img').hide();
+			$('#loan_error').empty().append("Please select an option");
+		}
 	});
 </script>

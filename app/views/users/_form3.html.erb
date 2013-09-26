@@ -7,7 +7,7 @@
 	<div class="message" id="desc_error"></div>
 
 	<%= f.label :previous, 'Have you previously applied for disability benefits?' %>
-	<%= f.select :previous, options_for_select(previous_options) %>
+	<%= f.select :previous, options_for_select(previous_options), :include_blank => true %>
 	<span class="checkimg" id="previouscheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
@@ -17,27 +17,37 @@
 <% end %>
 </div>
 <script type="text/javascript">
-$('#submit3').click(function(event) {
-	event.preventDefault();
-	$.ajax({
-		type: "POST",
-		url: $('#form2').attr('action'),
-		data: { desc: $("#user_desc").val() },
-		dataType: "script",
-		async: false
+		$('#submit3').click(function(event) {
+			if ($('#user_previous').val() == "") {
+				event.preventDefault();
+				$('#previous_error').empty().append("Please select an option");
+				$('#previouscheck img').hide();
+			}
+			else {
+				event.preventDefault();
+				$.ajax({
+					type: "POST",
+					url: $('#form2').attr('action'),
+					data: { desc: $("#user_desc").val(), previous: $("#user_previous").val() },
+					dataType: "script",
+					async: false
+				});
+				$('#form3').hide();
+				$('#form4').show().appendTo('.form-box');
+				$('.progress-bar img').attr('src','/assets/progressbar4.png');
+				$('.info-box').css('margin-top','10px')
+			}
+		});
+	$('select#user_previous').bind('click change',function() {
+		if ($('#user_previous').val() != "") {
+			$('#previouscheck img').show();
+			$('#previous_error').empty();
+		}
+		if ($('#user_previous').val() == "") {
+			$('#previouscheck img').hide();
+			$('#previous_error').empty().append("Please select an option");
+		}
 	});
-	$('#form3').hide();
-	$('#form4').show().appendTo('.form-box');
-	$('.progress-bar img').attr('src','/assets/progressbar4.png');
-	$('.info-box').css('margin-top','10px')
-});
+	
 
-$('textarea#user_desc').blur(function(event){
-	if ($('textarea#user_desc').val().length < 1) {
-		$('#desccheck img').hide();
-	}
-	if ($('textarea#user_desc').val().length > 1) {
-		$('#desccheck img').show();
-	}
-});
 </script>

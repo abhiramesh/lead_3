@@ -1,20 +1,20 @@
 <%= form_for @user, :html => {:id => "form2"} do |f| %>
 	<%= f.label :employment, 'Do you expect to be unemployed for at least 12 months?' %>
-	<%= f.select :employment, options_for_select(employment_options) %>
+	<%= f.select :employment, options_for_select(employment_options), :include_blank => true %>
 	<span class="checkimg" id="employmentcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
 	<div class="message" id="employment_error"></div>
 
 	<%= f.label :medical, 'Are you currently receiving medical treatment for your disabling condition?' %>
-	<%= f.select :medical, options_for_select(medical_options) %>
+	<%= f.select :medical, options_for_select(medical_options), :include_blank => true %>
 	<span class="checkimg" id="medicalcheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
 	<div class="message" id="medical_error"></div>
 	
 	<%= f.label :attorney, 'Do you currently have a disability or attorney advocate?' %>
-	<%= f.select :attorney, options_for_select(attorney_options) %>
+	<%= f.select :attorney, options_for_select(attorney_options), :include_blank => true %>
 	<span class="checkimg" id="attorneycheck"><img src="/assets/check.png"></span>
 	<div class="desc">
 	</div>
@@ -24,26 +24,65 @@
 <% end %>
 <script type="text/javascript">
 	$('select#user_employment').bind('click change',function() {
-		$('#employmentcheck img').show();
+		if ($('#user_employment').val() != "") {
+			$('#employmentcheck img').show();
+			$('#employment_error').empty();
+		}
+		if ($('#user_employment').val() == "") {
+			$('#employmentcheck img').hide();
+			$('#employment_error').empty().append("Please select an option");
+		}
 	});
 	$('select#user_medical').bind('click change',function() {
-		$('#medicalcheck img').show();
+		if ($('#user_medical').val() != "") {
+			$('#medicalcheck img').show();
+			$('#medical_error').empty();
+		}
+		if ($('#user_medical').val() == "") {
+			$('#medicalcheck img').hide();
+			$('#medical_error').empty().append("Please select an option");
+		}
 	});
 	$('select#user_attorney').bind('click change',function() {
-		$('#attorneycheck img').show();
+		if ($('#user_attorney').val() != "") {
+			$('#attorneycheck img').show();
+			$('#attorney_error').empty();
+		}
+		if ($('#user_attorney').val() == "") {
+			$('#attorneycheck img').hide();
+			$('#attorney_error').empty().append("Please select an option");
+		}
 	});
 	$('#submit2').click(function(){
-		event.preventDefault();
-		$.ajax({
-			type: "POST",
-			url: $('#form2').attr('action'),
-			data: { medical: $("select#user_medical").val(), employment: $("select#user_employment").val(), attorney: $("select#user_attorney").val() },
-			dataType: "script",
-			async: false
-		});
-		$('#form2').hide();
-		$('#form3').show().appendTo('.form-box');
-		$('.progress-bar img').attr('src','/assets/progressbar3.png');
-		$('.info-box').css('margin-top','-80px')
+		if ($('#user_medical').val() == "") {
+			event.preventDefault();
+			$('#medical_error').empty().append("Please select an option");
+			$('#medicalcheck img').hide();
+		}
+		if ($('#user_attorney').val() == "") {
+			event.preventDefault();
+			$('#attorney_error').empty().append("Please select an option");
+			$('#attorneycheck img').hide();
+		}
+		if ($('#user_employment').val() == "") {
+			event.preventDefault();
+			$('#employment_error').empty().append("Please select an option");
+			$('#employmentcheck img').hide();
+		}
+		else {
+			event.preventDefault();
+			$.ajax({
+				type: "POST",
+				url: $('#form2').attr('action'),
+				data: { medical: $("select#user_medical").val(), employment: $("select#user_employment").val(), attorney: $("select#user_attorney").val() },
+				dataType: "script",
+				async: false
+			});
+			$('#form2').hide();
+			$('#form3').show().appendTo('.form-box');
+			$('.progress-bar img').attr('src','/assets/progressbar3.png');
+			$('.info-box').css('margin-top','-80px')	
+		}
+		
 	});
 </script>

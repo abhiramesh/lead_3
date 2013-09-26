@@ -21,7 +21,7 @@
 			<br>
 			<span id="age">How old are you?</span>
 			<span class="required-star"><img src="/assets/required.gif"></span>
-			<%= f.select :age, options_for_select(age_options, "30-39") %>
+			<%= f.select :age, options_for_select(age_options), :include_blank => true %>
 			<span class="checkimg" id="agecheck"><img src="/assets/check.png"></span>
 			<div class="message" id="age_error"></div>
 
@@ -85,6 +85,18 @@
 <%= render partial: "users/form4" %>
 
 <script type="text/javascript">
+	$('select#user_age').bind('click change',function() {
+		if ($('#user_age').val() != "") {
+			$('#agecheck img').show();
+			$('#age_error').empty();
+		}
+		if ($('#user_age').val() == "") {
+			$('#agecheck img').hide();
+			$('#age_error').empty().append("Please enter a valid age");
+		}
+
+	});
+
 	$('input#user_zipcode').blur(function(event){
 		$.ajax({
 			type: "POST",
@@ -122,6 +134,11 @@
 					}
 				  }
 		});
+		if ($('#user_age').val() == "") {
+			event.preventDefault();
+			$('#agecheck img').hide();
+			$('#age_error').empty().append("Please enter a valid age");
+		}
 	});
 	$(".info-box").click(function() {
 		if ($(".expand-button").text() == " + ") {
