@@ -69,7 +69,7 @@
 			$('#employment_error').empty().append("Please select an option");
 			$('#employmentcheck img').hide();
 		}
-		else {
+		if ($('#user_employment').val() != "" && $('#user_attorney').val() != "" && $('#user_medical').val() != "" ) {
 			event.preventDefault();
 			$.ajax({
 				type: "POST",

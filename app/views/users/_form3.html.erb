@@ -23,7 +23,7 @@
 				$('#previous_error').empty().append("Please select an option");
 				$('#previouscheck img').hide();
 			}
-			else {
+			if ($('#user_previous').val() != "") {
 				event.preventDefault();
 				$.ajax({
 					type: "POST",
