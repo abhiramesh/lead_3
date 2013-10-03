@@ -43,6 +43,13 @@
   padding-bottom: 20px;
 }
 
+.phrase2{
+  padding-top: 72px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #FF8940;
+}
+
 span#zipcode{
   margin-left: 10px;
   font-size: 17px;
@@ -214,22 +221,17 @@ select#user_debt, select#user_loan{
 }
 
 .seenin {
-  position: relative;
-  left: 450px;
-  top: 55px;
+  width: 250px;
+  margin-left: 650px
 }
 
 .seenin img {
-  width: 295px;
-  position: relative;
-  left: 25px;
   padding-top: 20px;
 }
 
 .seenintitle {
   font-size: 22px;
   padding-top: 10px;
-  margin-top: 350px;
 }
 
 .info-box {
@@ -238,7 +240,7 @@ select#user_debt, select#user_loan{
   width: 570px;
   border: solid 1px;
   border-radius: 5px;
-  margin-top: -90px;
+  margin-top: -180px;
   cursor: pointer;
 }
 
