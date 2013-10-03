@@ -108,11 +108,11 @@ class UsersController < ApplicationController
       @user.desc = params["desc"]
       @user.save!
     end
-    if params["user"]["phone"]
+    if params["user"] && params["user"]["phone"]
       @user.phone = params["user"]["phone"]
       @user.save!
     end
-    if params["user"]["email"]
+    if params["user"] && params["user"]["email"]
       @user.email = params["user"]["email"]
       @user.save!
     end
