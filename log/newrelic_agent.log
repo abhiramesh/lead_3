@@ -79,3 +79,19 @@
 [10/03/13 13:48:40 -0400 Abhijeeth-Rameshs-MacBook-Pro.local (22201)] INFO : Installing Rails3 Error instrumentation
 [10/03/13 13:48:40 -0400 Abhijeeth-Rameshs-MacBook-Pro.local (22201)] INFO : Finished instrumentation
 [10/03/13 13:48:41 -0400 Abhijeeth-Rameshs-MacBook-Pro.local (22201)] INFO : Doing deferred dependency-detection before Rack startup
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Starting the New Relic agent in "development" environment.
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Reading configuration from config/newrelic.yml
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Enabling the Request Sampler.
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Environment: development
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Dispatcher: webrick
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Application: Lead_3
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] WARN : Agent configured not to send data in this environment.
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing ActiveRecord instrumentation
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing Net instrumentation
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing deferred Rack instrumentation
+[10/03/13 17:40:07 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing Rails 3 Controller instrumentation
+[10/03/13 17:40:08 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[10/03/13 17:40:08 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Installing Rails3 Error instrumentation
+[10/03/13 17:40:08 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Finished instrumentation
+[10/03/13 17:40:09 -0400 hnt20352.wireless-pennnet.upenn.edu (23648)] INFO : Doing deferred dependency-detection before Rack startup
