@@ -34,6 +34,7 @@
 
 .form-title{
   font-size: 26px;
+  line-height: 28px;
   font-weight: bold;
   padding: 10px 0px;
 }
@@ -201,6 +202,7 @@ select#user_debt, select#user_loan{
 
 .testimonial-body{
   padding-bottom: 10px;
+  font-size: 11px;
 }
 
 .bbb img {
@@ -209,6 +211,12 @@ select#user_debt, select#user_loan{
 
 .trustlink img {
   width: 140px;
+}
+
+.seenin {
+  position: relative;
+  left: 450px;
+  top: 55px;
 }
 
 .seenin img {
