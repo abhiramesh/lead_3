@@ -12,7 +12,10 @@ class RegistrationController < Devise::RegistrationsController
     if params["user"]["zipcode"]
       zipcode = params["user"]["zipcode"]
     end
-    @user = User.create(:ip => request.remote_ip, :campaign => campaign, :age => age, :zipcode => zipcode)
+    if params["xxTrustedFormCertUrl"]
+      trusted = params["xxTrustedFormCertUrl"]
+    end
+    @user = User.create(:ip => request.remote_ip, :campaign => campaign, :age => age, :zipcode => zipcode, :trusted => trusted)
     sign_in @user
   end
     

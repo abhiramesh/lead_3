@@ -27,10 +27,11 @@
 
 			<div id="newsubmit1"></div>
 			<%= f.submit "Do I Qualify?", :class => "home-submit", :id => "submit1" %>
+			<div class="phrase2">
+				<br><br>
+				Qualify for a Free Consultation with a Disability Attorney
+			</div>
 		<% end %>
-		<div class="phrase2">
-			Qualify for a Free Consultation with a Disability Attorney
-		</div>
 	</div>
 	<div class="testimonial">
 		<div class="testimonial-title">
@@ -158,3 +159,17 @@
 	});
 
 </script>
+<script type="text/javascript">
+(function() {
+    var field = 'xxTrustedFormCertUrl';
+    var provideReferrer = false;
+    var tf = document.createElement('script');
+    tf.type = 'text/javascript'; tf.async = true; 
+    tf.src = 'http' + ('https:' == document.location.protocol ? 's' : '') +
+    '://api.trustedform.com/trustedform.js?provide_referrer=' + escape(provideReferrer) + '&field=' + escape(field) + '&l='+new Date().getTime()+Math.random();
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s); }
+)();
+</script>
+<noscript>
+    <img src="http://api.trustedform.com/ns.gif" />
+</noscript>

@@ -21,6 +21,10 @@
 	<div class="message" id="attorney_error"></div>
 
 	<%= f.submit "Next >>", :class => "home-submit", :id => "submit2"%>
+	<div class="phrase2">
+		<br><br>
+		Qualify for a Free Consultation with a Disability Attorney
+	</div>
 <% end %>
 <script type="text/javascript">
 	$('select#user_employment').bind('click change',function() {
@@ -81,7 +85,7 @@
 			$('#form2').hide();
 			$('#form3').show().appendTo('.form-box');
 			$('.progress-bar img').attr('src','/assets/progressbar3.png');
-			$('.info-box').css('margin-top','-80px')	
+			$('.info-box').css('margin-top','-35px')	
 		}
 		
 	});
