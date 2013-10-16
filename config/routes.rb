@@ -16,6 +16,7 @@ Mortgage3::Application.routes.draw do
   post '/users/:id', to: 'users#update'
 
   get '/vpujji1234', to: 'users#results'
+  get '/csvi', to: 'users#csvi'
 
   post '/checkzip', to: 'users#checkzip'
 

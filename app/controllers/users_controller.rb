@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authorize, :except => [:new, :create, :edit, :update, :results, :extra_info, :checkzip]
+  before_filter :authorize, :except => [:new, :create, :edit, :update, :results, :extra_info, :checkzip, :csvi]
 
   require 'mechanize'
   require 'geokit'
@@ -14,6 +14,11 @@ class UsersController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @users }
     end
+  end
+
+  def csvi
+    @users = User.all.sort
+      send_data User.to_csv
   end
 
   def extra_info
