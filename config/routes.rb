@@ -16,7 +16,7 @@ Mortgage3::Application.routes.draw do
   post '/users/:id', to: 'users#update'
 
   get '/vpujji1234', to: 'users#results'
-  #get '/csvi', to: 'users#csvi'
+  # get '/csvi', to: 'users#csvi'
   
   get '/about_us', to: 'static_pages#about_us'
   get '/fees', to: 'static_pages#fees'
