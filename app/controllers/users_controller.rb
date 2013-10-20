@@ -123,6 +123,10 @@ class UsersController < ApplicationController
       @user.email = params["user"]["email"]
       @user.save!
     end
+    if params["user"] && params["user"]["consent"]
+      @user.consent = params["user"]["consent"]
+      @user.save!
+    end
     if params["first_name"] && params["last_name"]
       @user.name = params["first_name"] + " " + params["last_name"]
       @user.save!

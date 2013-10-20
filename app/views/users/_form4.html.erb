@@ -26,6 +26,12 @@
 	<span class="checkimg" id="phonecheck"><img src="/assets/check.png"></span>
 	<div class="message" id="phone_error"></div>	
 
+	<div id="consent">
+		<%= f.check_box :consent, {:checked => true}, "Yes", "No" %>
+		I agree to be contacted by phone or email according to these <a target="_blank" href="/privacy">terms</a>
+	</div>
+	<div class="message" id="consent_error"></div>
+
 	<%= f.submit "Get Results!", :class => "home-submit", :id => "submit4"%>
 	<div class="phrase2">
 		<br><br>
