@@ -107,42 +107,56 @@
 	});
 
 	$('input#user_zipcode').blur(function(event){
-		$.ajax({
-			type: "POST",
-			url: '/checkzip',
-			data: { zipcode: $('input#user_zipcode').val() },
-				  dataType: "script",
-				  async: false,
-				  success: function(response) {
-				  	var response = JSON.parse(response)
-					if (response == "no") {
-						event.preventDefault();
-						$('#zip_error').empty().append("Please enter a valid zipcode");
-						$('#zipcheck img').hide();
-					}
-					if (response == "yes") {
-						$('#zip_error').empty();
-						$('#zipcheck img').show();
-					}
-				  }
-			});
+		if (/(^\d{5}$)|(^\d{5}-\d{4}$)/.test($('input#user_zipcode').val()) == false) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+			$('#zipcheck img').hide();
+		}
+		else{
+			$('#zip_error').empty();
+			$('#zipcheck img').show();
+		}
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: '/checkzip',
+		// 	data: { zipcode: $('input#user_zipcode').val() },
+		// 		  dataType: "script",
+		// 		  async: false,
+		// 		  success: function(response) {
+		// 		  	var response = JSON.parse(response)
+		// 			if (response == "no") {
+		// 				event.preventDefault();
+		// 				$('#zip_error').empty().append("Please enter a valid zipcode");
+		// 				$('#zipcheck img').hide();
+		// 			}
+		// 			if (response == "yes") {
+		// 				$('#zip_error').empty();
+		// 				$('#zipcheck img').show();
+		// 			}
+		// 		  }
+		// });
 	});
 	$('#submit1').click(function(event){
-		$.ajax({
-			type: "POST",
-			url: '/checkzip',
-			data: { zipcode: $('input#user_zipcode').val() },
-				  dataType: "script",
-				  async: false,
-				  success: function(response) {
-				  	var response = JSON.parse(response)
-					if (response == "no") {
-						event.preventDefault();
-						$('#zip_error').empty().append("Please enter a valid zipcode");
-						$('#zipcheck img').hide();
-					}
-				  }
-		});
+		// $.ajax({
+		// 	type: "POST",
+		// 	url: '/checkzip',
+		// 	data: { zipcode: $('input#user_zipcode').val() },
+		// 		  dataType: "script",
+		// 		  async: false,
+		// 		  success: function(response) {
+		// 		  	var response = JSON.parse(response)
+		// 			if (response == "no") {
+		// 				event.preventDefault();
+		// 				$('#zip_error').empty().append("Please enter a valid zipcode");
+		// 				$('#zipcheck img').hide();
+		// 			}
+		// 		  }
+		// });
+	if (/(^\d{5}$)|(^\d{5}-\d{4}$)/.test($('input#user_zipcode').val()) == false) {
+			event.preventDefault();
+			$('#zip_error').empty().append("Please enter a valid zipcode");
+			$('#zipcheck img').hide();
+	}
 		if ($('#user_age').val() == "") {
 			event.preventDefault();
 			$('#agecheck img').hide();

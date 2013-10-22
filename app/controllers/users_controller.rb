@@ -33,20 +33,20 @@ class UsersController < ApplicationController
     @users = User.all.sort
   end
 
-  def checkzip
-    # geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(params["zipcode"])
-    #   if geo.success
-    #     render json: "yes".to_json
-    #   else
-    #     render json: "no".to_json
-    #   end
-    if params["zipcode"].length == 5 && params["zipcode"].to_region != nil
-      render json: "yes".to_json
-    else
-      render json: "no".to_json
-    end
+  # def checkzip
+  #   # geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(params["zipcode"])
+  #   #   if geo.success
+  #   #     render json: "yes".to_json
+  #   #   else
+  #   #     render json: "no".to_json
+  #   #   end
+  #   if params["zipcode"].length == 5 && params["zipcode"].to_region != nil
+  #     render json: "yes".to_json
+  #   else
+  #     render json: "no".to_json
+  #   end
 
-  end
+  # end
 
   # GET /users/1
   # GET /users/1.json
@@ -139,6 +139,9 @@ class UsersController < ApplicationController
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
+            else
+              state = ""
+            end
               if @user.campaign.to_s.downcase.include? "vinny"
                 lead_src = "PUJ"
               elsif @user.campaign == "other"
@@ -174,7 +177,6 @@ class UsersController < ApplicationController
               puts d = Nokogiri::XML(response.content)
               @user.lead = d.xpath("//lead_id").text
               @user.save!
-            end
             redirect_to '/logout'
        elsif @user.desc && @user.phone && @user.qualified == nil
            @user.qualified = false
@@ -185,6 +187,9 @@ class UsersController < ApplicationController
             geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
             if geo.success
               state = geo.state
+            else
+              state = ""
+            end
               if @user.campaign.to_s.downcase.include? "vinny"
                 lead_src = "PUJ"
               elsif @user.campaign == "other"
@@ -220,7 +225,6 @@ class UsersController < ApplicationController
               puts d = Nokogiri::XML(response.content)
               @user.lead = d.xpath("//lead_id").text
               @user.save!
-            end
           redirect_to '/logout'
         end
       else

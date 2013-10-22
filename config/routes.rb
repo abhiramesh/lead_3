@@ -21,7 +21,7 @@ Mortgage3::Application.routes.draw do
   get '/about_us', to: 'static_pages#about_us'
   get '/fees', to: 'static_pages#fees'
 
-  post '/checkzip', to: 'users#checkzip'
+  # post '/checkzip', to: 'users#checkzip'
 
   get '/terms', to: 'static_pages#terms'
 
