@@ -1,28 +1,28 @@
 <%= form_for @user, :html => {:id => "form4"} do |f| %>	
 	<span id="firstname">First Name:</span>
 	<span class="required-star"><img src="/assets/required.gif"></span>
-	<%= text_field_tag :first_name, nil, :placeholder => "First Name" %>
+	<%= text_field_tag :first_name, nil, :class => "xverify_firstname", :placeholder => "First Name" %>
 	<span class="checkimg" id="firstnamecheck"><img src="/assets/check.png"></span>
 	<div class="message" id="firstname_error"></div>
 	<br>
 
 	<span id="lastname">Last Name:</span>
 	<span class="required-star"><img src="/assets/required.gif"></span>
-	<%= text_field_tag :last_name, nil, :placeholder => "Last Name" %>
+	<%= text_field_tag :last_name, nil, :class => "xverify_lastname", :placeholder => "Last Name" %>
 	<span class="checkimg" id="lastnamecheck"><img src="/assets/check.png"></span>
 	<div class="message" id="lastname_error"></div>
 	<br>
 
 	<span id="email">Email:</span>
 	<span class="required-star2"><img src="/assets/required.gif"></span>
-	<%= f.text_field :email, :placeholder => "bob@yahoo.com" %>
+	<%= f.text_field :email, :class => "xverify_email", :placeholder => "bob@yahoo.com" %>
 	<span class="checkimg" id="emailcheck"><img src="/assets/check.png"></span>
 	<div class="message" id="email_error"></div>
 	<br>
 
 	<span id="phone">Phone:</span>
 	<span class="required-star3"><img src="/assets/required.gif"></span>
-	<%= f.text_field :phone, :placeholder => "215-444-3344" %>
+	<%= f.text_field :phone, :class => "xverify_phone", :placeholder => "215-444-3344" %>
 	<span class="checkimg" id="phonecheck"><img src="/assets/check.png"></span>
 	<div class="message" id="phone_error"></div>	
 
