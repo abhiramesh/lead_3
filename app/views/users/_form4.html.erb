@@ -27,8 +27,8 @@
 	<div class="message" id="phone_error"></div>	
 
 	<div id="consent">
-		<%= f.check_box :consent, {:checked => true}, "Yes", "No" %>
-		I agree to be contacted by phone or email according to these <a target="_blank" href="/privacy">terms</a>
+		<%= f.check_box :consent, {:checked => false}, "Yes", "No" %>
+		I consent to be called and/or texted by or on behalf of this inquiry by an autodialer or a prerecorded voice message at the number above. My consent does not require purchase. Standard cellular rates will apply if applicable.
 	</div>
 	<div class="message" id="consent_error"></div>
 
@@ -49,6 +49,15 @@
 		if ($('input#user_phone').val().replace(/\D+/g,'').length == 10 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 0 && $('input#user_phone').val().replace(/\D+/g,'')[0] != 1) {
 			$('#phone_error').empty();
 			$('#phonecheck img').show();
+		}
+	});
+
+	$("#user_consent").change(function(){
+		if ($("#user_consent").is(':checked') == false) {		
+			$('#consent_error').empty().append("Please click the checkbox to consent");
+		}
+		else {
+			$('#consent_error').empty();
 		}
 	});
 
@@ -110,6 +119,10 @@
 			event.preventDefault();
 			$('#lastname_error').empty().append("Please enter your last name");
 			$('#lastnamecheck img').hide();
+		}
+		if ($("#user_consent").is(':checked') == false) {
+			event.preventDefault();
+			$('#consent_error').empty().append("Please click the checkbox to consent");
 		}
 	});
 
