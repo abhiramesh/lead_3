@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_filter :authorize, :except => [:new, :create, :edit, :update, :results, :extra_info, :checkzip, :csvi]
 
   require 'mechanize'
-  require 'geokit'
+  #require 'geokit'
   require 'area'
 
   # GET /users
@@ -95,48 +95,58 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if params["employment"] && params["medical"] && params["attorney"]
+    if params["employment"]
       @user.employment = params["employment"]
+      @user.save!
+    end
+    if params["medical"]
       @user.medical = params["medical"]
+      @user.save!
+    end
+    if params["attorney"]
       @user.attorney = params["attorney"]
       @user.save!
-      render json: @user.id
     end
     if params["previous"]
       @user.previous = params["previous"]
       @user.save!
-      if params["desc"]
-        @user.desc = params["desc"]
-        @user.save!
-      end
-      render json: @user.id
     end
-    if params["user"] && params["user"]["phone"] && params["user"]["email"] && params["first_name"] && params["last_name"] && params["user"]["consent"]
+    if params["desc"]
+      @user.desc = params["desc"]
+      @user.save!
+    end
+    if params["user"] && params["user"]["phone"]
       @user.phone = params["user"]["phone"]
-      @user.email = params["user"]["email"]
+      @user.save!
+    end
+    if params["user"] && params["user"]["email"]
+      @user.email = params["user"]["email"].gsub(/\s+/, "")
+      @user.save!
+    end
+    if params["user"] && params["user"]["consent"]
       @user.consent = params["user"]["consent"]
+      @user.save!
+    end
+    if params["first_name"] && params["last_name"]
       @user.name = params["first_name"] + " " + params["last_name"]
       @user.save!
     end
-
-      if @user.update_attributes(params[:user])
-         if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
-            @user.qualified = true
-            @user.save!
-            a = Mechanize.new
-            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
-            if geo.success
-              state = geo.state
-            else
-              state = ""
+    if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
+        @user.qualified = true
+        @user.save!
+        a = Mechanize.new
+            begin
+            state = @user.zipcode.to_region(state: true)
+            rescue
+            state = ""
             end
-              if @user.campaign.to_s.downcase.include? "vinny"
-                lead_src = "PUJ"
-              elsif @user.campaign == "other"
-                lead_src = "REV"
-              else
-                lead_src = "RAW"
-              end
+        if @user.campaign.to_s.downcase.include? "vinny"
+          lead_src = "PUJ"
+        elsif @user.campaign == "other"
+          lead_src = "REV"
+        else
+          lead_src = "RAW"
+        end
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
@@ -172,11 +182,10 @@ class UsersController < ApplicationController
            redirect_to '/extrainfo'
        elsif @user.qualified == false
             a = Mechanize.new
-            geo = GeoKit::Geocoders::MultiGeocoder.multi_geocoder(@user.zipcode)
-            if geo.success
-              state = geo.state
-            else
-              state = ""
+            begin
+            state = @user.zipcode.to_region(state: true)
+            rescue
+            state = ""
             end
               if @user.campaign.to_s.downcase.include? "vinny"
                 lead_src = "PUJ"
@@ -215,9 +224,6 @@ class UsersController < ApplicationController
               @user.save!
           redirect_to '/logout'
         end
-      else
-        redirect_to 'logout'
-      end
   end
 
   # DELETE /users/1
