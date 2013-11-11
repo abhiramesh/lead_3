@@ -152,7 +152,7 @@ class UsersController < ApplicationController
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
-                "SRC" => "PujiiComp3",
+                "SRC" => "rinke",
                 "Trusted_Form" => @user.trusted,
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
@@ -200,7 +200,7 @@ class UsersController < ApplicationController
               url = "https://leads.leadtracksystem.com/genericPostlead.php"
               params = {
                 "TYPE" => '85',
-                "SRC" => "PujiiComp3",
+                "SRC" => "rinke",
                 "Trusted_Form" => @user.trusted,
                 "Landing_Page" => "amp1",
                 "IP_Address" => "75.2.92.149",
