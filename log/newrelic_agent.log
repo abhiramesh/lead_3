@@ -301,3 +301,51 @@
 [11/11/13 00:19:41 -0500 host-101-8.paphrad.clients.pavlovmedia.com (8190)] INFO : Installing Rails3 Error instrumentation
 [11/11/13 00:19:41 -0500 host-101-8.paphrad.clients.pavlovmedia.com (8190)] INFO : Finished instrumentation
 [11/11/13 00:19:42 -0500 host-101-8.paphrad.clients.pavlovmedia.com (8190)] INFO : Doing deferred dependency-detection before Rack startup
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Starting the New Relic agent in "development" environment.
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Reading configuration from config/newrelic.yml
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Enabling the Request Sampler.
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Environment: development
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Dispatcher: webrick
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Application: Lead_3
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] WARN : Agent configured not to send data in this environment.
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Installing ActiveRecord instrumentation
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Installing Net instrumentation
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Installing deferred Rack instrumentation
+[11/11/13 11:15:28 -0500 Macintosh-9.local (9445)] INFO : Installing Rails 3 Controller instrumentation
+[11/11/13 11:15:29 -0500 Macintosh-9.local (9445)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[11/11/13 11:15:29 -0500 Macintosh-9.local (9445)] INFO : Installing Rails3 Error instrumentation
+[11/11/13 11:15:29 -0500 Macintosh-9.local (9445)] INFO : Finished instrumentation
+[11/11/13 11:15:30 -0500 Macintosh-9.local (9445)] INFO : Doing deferred dependency-detection before Rack startup
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Starting the New Relic agent in "development" environment.
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Reading configuration from config/newrelic.yml
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Enabling the Request Sampler.
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Environment: development
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Dispatcher: webrick
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Application: Lead_3
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] WARN : Agent configured not to send data in this environment.
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Installing ActiveRecord instrumentation
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Installing Net instrumentation
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Installing deferred Rack instrumentation
+[11/11/13 11:45:58 -0500 Macintosh-9.local (9708)] INFO : Installing Rails 3 Controller instrumentation
+[11/11/13 11:45:59 -0500 Macintosh-9.local (9708)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[11/11/13 11:45:59 -0500 Macintosh-9.local (9708)] INFO : Installing Rails3 Error instrumentation
+[11/11/13 11:45:59 -0500 Macintosh-9.local (9708)] INFO : Finished instrumentation
+[11/11/13 11:46:00 -0500 Macintosh-9.local (9708)] INFO : Doing deferred dependency-detection before Rack startup
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Starting the New Relic agent in "development" environment.
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Reading configuration from config/newrelic.yml
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Enabling the Request Sampler.
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Environment: development
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Dispatcher: webrick
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Application: Lead_3
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] WARN : Agent configured not to send data in this environment.
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Installing ActiveRecord instrumentation
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Installing Net instrumentation
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Installing deferred Rack instrumentation
+[11/11/13 12:06:27 -0500 Macintosh-9.local (9877)] INFO : Installing Rails 3 Controller instrumentation
+[11/11/13 12:06:28 -0500 Macintosh-9.local (9877)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[11/11/13 12:06:28 -0500 Macintosh-9.local (9877)] INFO : Installing Rails3 Error instrumentation
+[11/11/13 12:06:28 -0500 Macintosh-9.local (9877)] INFO : Finished instrumentation
+[11/11/13 12:06:29 -0500 Macintosh-9.local (9877)] INFO : Doing deferred dependency-detection before Rack startup

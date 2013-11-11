@@ -95,42 +95,30 @@ class UsersController < ApplicationController
   # PUT /users/1.json
   def update
     @user = User.find(params[:id])
-    if params["employment"]
+    if params["employment"] && params["medical"] && params["attorney"]
       @user.employment = params["employment"]
-      @user.save!
-    end
-    if params["medical"]
       @user.medical = params["medical"]
-      @user.save!
-    end
-    if params["attorney"]
       @user.attorney = params["attorney"]
       @user.save!
+      render json: @user.id
     end
     if params["previous"]
       @user.previous = params["previous"]
       @user.save!
+      if params["desc"]
+        @user.desc = params["desc"]
+        @user.save!
+      end
+      render json: @user.id
     end
-    if params["desc"]
-      @user.desc = params["desc"]
-      @user.save!
-    end
-    if params["user"] && params["user"]["phone"]
+    if params["user"] && params["user"]["phone"] && params["user"]["email"] && params["first_name"] && params["last_name"] && params["user"]["consent"]
       @user.phone = params["user"]["phone"]
-      @user.save!
-    end
-    if params["user"] && params["user"]["email"]
       @user.email = params["user"]["email"]
-      @user.save!
-    end
-    if params["user"] && params["user"]["consent"]
       @user.consent = params["user"]["consent"]
-      @user.save!
-    end
-    if params["first_name"] && params["last_name"]
       @user.name = params["first_name"] + " " + params["last_name"]
       @user.save!
     end
+
       if @user.update_attributes(params[:user])
          if @user.phone && @user.age != "Under 18" && @user.age != "18-29" && @user.employment == "Making less than $1500 per month" && @user.attorney == "No" && @user.medical == "Yes"
             @user.qualified = true
