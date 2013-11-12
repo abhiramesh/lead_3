@@ -1,4 +1,4 @@
-<%= form_for @user, :html => {:id => "form2"} do |f| %>
+<%= form_for @user, remote: true, :html => {:id => "form2"} do |f| %>
 	<%= f.label :employment, 'Do you expect to be unemployed or making less than $1000 per month?' %>
 	<%= f.select :employment, options_for_select(employment_options), :include_blank => true %>
 	<span class="checkimg" id="employmentcheck"><img src="/assets/check.png"></span>
@@ -74,14 +74,6 @@
 			$('#employmentcheck img').hide();
 		}
 		if ($('#user_employment').val() != "" && $('#user_attorney').val() != "" && $('#user_medical').val() != "" ) {
-			event.preventDefault();
-			$.ajax({
-				type: "POST",
-				url: $('#form2').attr('action'),
-				data: { medical: $("select#user_medical").val(), employment: $("select#user_employment").val(), attorney: $("select#user_attorney").val() },
-				dataType: "script",
-				async: false
-			});
 			$('#form2').hide();
 			$('#form3').show().appendTo('.form-box');
 			$('.progress-bar img').attr('src','/assets/progressbar3.png');

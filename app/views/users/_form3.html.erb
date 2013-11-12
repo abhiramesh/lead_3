@@ -1,4 +1,4 @@
-<%= form_for @user, :html => {:id => "form3"} do |f| %>	
+<%= form_for @user, remote: true, :html => {:id => "form3"} do |f| %>	
 	<%= f.label :desc, 'Describe your disability and how it prevents you from working' %>
 	<%= f.text_area :desc %>
 	<span class="checkimg" id="desccheck"><img src="/assets/check.png"></span>
@@ -28,14 +28,6 @@
 				$('#previouscheck img').hide();
 			}
 			if ($('#user_previous').val() != "") {
-				event.preventDefault();
-				$.ajax({
-					type: "POST",
-					url: $('#form2').attr('action'),
-					data: { desc: $("#user_desc").val(), previous: $("#user_previous").val() },
-					dataType: "script",
-					async: false
-				});
 				$('#form3').hide();
 				$('#form4').show().appendTo('.form-box');
 				$('.progress-bar img').attr('src','/assets/progressbar4.png');
