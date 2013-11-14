@@ -25,8 +25,8 @@ trustlink.png: trustlink-f0574614c2f68a007f961c006cc8eb68.png
 trustlink/index.png: trustlink-f0574614c2f68a007f961c006cc8eb68.png
 application.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
 application/index.js: application-de18d7e6b44271513c9d6f27ea57b7ac.js
-application.css: application-ee1b42f6c036bc47aca6f96b599c5ba1.css
-application/index.css: application-ee1b42f6c036bc47aca6f96b599c5ba1.css
+application.css: application-a10b4120d8380528bc8d5fe3ec24ef4e.css
+application/index.css: application-a10b4120d8380528bc8d5fe3ec24ef4e.css
 jquery.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 jquery/index.min.map: jquery.min-6336c5bca4c709e809647cdfcb484d0a.map
 glyphicons-halflings-white.png: glyphicons-halflings-white-6cccd17a7aed91dbc0157d343c68c0d9.png
